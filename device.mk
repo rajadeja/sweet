@@ -120,6 +120,8 @@ PRODUCT_PACKAGES += \
     FrameworkResOverlaySweet \
     SettingsOverlay \
     SettingsProviderOverlaySweet \
+    SweetinproSettingsProvider \
+    SweetinproWifiOverlay \
     SystemUIOverlaySweet \
     TelephonyOverlaySweet \
     WifiOverlay
