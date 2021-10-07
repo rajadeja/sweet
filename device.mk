@@ -23,6 +23,7 @@ TARGET_DISABLE_MIMOJI_FILES := true
 
 PRODUCT_PACKAGES += \
     libvolumelistener \
+    audio.r_submix.default \
     android.hardware.audio.service \
     android.hardware.audio.common-util \
     android.hardware.audio.common@2.0-util \
