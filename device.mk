@@ -349,4 +349,7 @@ PRODUCT_PACKAGES += \
      libloc_core \
      libgnss
 
+# VNDK
+$(foreach target, $(shell cat $(LOCAL_PATH)/vndk.txt), $(eval PRODUCT_PACKAGES += $(target).vendor))
+
 include vendor/xiaomi/sweet/sweet-vendor.mk
