@@ -268,7 +268,6 @@ ssize_t strscpy_pad(char *dest, const char *src, size_t count)
 	return written;
 }
 EXPORT_SYMBOL(strscpy_pad);
-#endif
 
 #ifndef __HAVE_ARCH_STPCPY
 /**
