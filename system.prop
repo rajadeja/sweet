@@ -20,3 +20,7 @@ media.settings.xml=/vendor/etc/media_profiles_vendor.xml
 # Camera
 persist.vendor.camera.facepp.fdenable=0
 ro.miui.notch=1
+=======
+
+# One handed mode
+ro.support_one_handed_mode=true
