@@ -46,12 +46,9 @@ public class RefreshRateTileService extends TileService {
         currentRefreshRate = Arrays.asList(refreshRateValues).indexOf(Integer.toString(RefreshRateUtils.getRefreshRate(context)));
     }
 
-    private void updateTileState() {
-        if (currentRefreshRate == 1) {
-            getQsTile().setState(Tile.STATE_ACTIVE);
-        } else {
-            getQsTile().setState(Tile.STATE_INACTIVE);
-        }
+    private void updateTileDescription() {
+        tile.setContentDescription(refreshRates[currentRefreshRate]);
+        tile.setSubtitle(refreshRates[currentRefreshRate]);
         tile.updateTile();
     }
 
@@ -59,8 +56,10 @@ public class RefreshRateTileService extends TileService {
     public void onStartListening() {
         super.onStartListening();
         tile = getQsTile();
+        tile.setState(Tile.STATE_ACTIVE);
         updateCurrentRefreshRate();
-        updateTileState();
+        updateTileDescription();
+        }
     }
 
     private int getRefreshRateVal() {
@@ -71,13 +70,13 @@ public class RefreshRateTileService extends TileService {
     public void onClick() {
         super.onClick();
         updateCurrentRefreshRate();
-        if (currentRefreshRate == 1) {
+        if (currentRefreshRate == refreshRates.length - 1) {
             currentRefreshRate = 0;
         } else {
-            currentRefreshRate = 1;
+            currentRefreshRate++;
         }
         RefreshRateUtils.setRefreshRate(context, getRefreshRateVal());
         RefreshRateUtils.setFPS(getRefreshRateVal());
-        updateTileState();
+        updateTileDescription();
     }
 }
